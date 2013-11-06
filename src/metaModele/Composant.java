@@ -24,6 +24,7 @@ public class Composant extends ComposantSupreme {
 		ajoutPortFourni(portFournis);
 		
 		this.configuration = configuration;
+		configuration.ajoutComposant(this);
 	}
 
 	public Composant(String nom, PortFourni portFournis, Configuration configuration) {

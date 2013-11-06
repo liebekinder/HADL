@@ -1,13 +1,14 @@
 package modele;
 
-import metaModele.PortConfigurationRequis;
+import metaModele.PortRequis;
 
 
-public class GetResponseConfiguration extends PortConfigurationRequis{
+public class GetResponseConfiguration extends PortRequis{
 
 	public GetResponseConfiguration(String nom) {
 		super(nom);
-		// TODO Auto-generated constructor stub
 	}
+
+	
 
 }

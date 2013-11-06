@@ -1,12 +1,13 @@
 package modele;
 
-import metaModele.PortConfigurationFourni;
+import metaModele.PortFourni;
 
-public class SendRequestConfiguration extends PortConfigurationFourni{
+public class SendRequestConfiguration extends PortFourni{
 
 	public SendRequestConfiguration(String nom) {
 		super(nom);
-		// TODO Auto-generated constructor stub
 	}
+
+	
 
 }

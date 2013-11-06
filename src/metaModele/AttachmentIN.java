@@ -9,8 +9,6 @@ public class AttachmentIN {
 		super();
 		this.portFourni = portFourni;
 		this.roleEntree = roleEntree;
-		portFourni.ajoutAttachment(this);
-		roleEntree.ajoutAttachment(this);
 	}
 	
 	

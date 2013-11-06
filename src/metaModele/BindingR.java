@@ -10,8 +10,6 @@ public class BindingR {
 		super();
 		this.portRequis = portRequis;
 		this.portConfigurationRequis = portConfigurationRequis;
-		portRequis.ajoutBinding(this);
-		portConfigurationRequis.ajoutBinding(this);
 	}
 	
 	

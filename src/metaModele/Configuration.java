@@ -10,6 +10,10 @@ public class Configuration extends ComposantSupreme {
 	private Set<Composant> composants;
 	private Set<Connecteur> connecteurs;
 	private Set<Configuration> configurations;
+	private Set<BindingF> bindingF;
+	private Set<BindingR> bindingR;
+	private Set<AttachmentIN> attachmentIN;
+	private Set<AttachmentOUT> attachmentOUT;
 
 	public Configuration(String nom, PortConfigurationRequis portConfigurationRequis,
 			PortConfigurationFourni portConfigurationFourni) {
@@ -19,21 +23,27 @@ public class Configuration extends ComposantSupreme {
 		this.portConfigurationFournis = new HashSet<>();
 		ajoutPortConfigurationFournis(portConfigurationFourni);
 		composants = new HashSet<Composant>();
+		
+
+		this.bindingF = new HashSet<>();
+		this.bindingR = new HashSet<>();
+		this.attachmentIN = new HashSet<>();
+		this.attachmentOUT = new HashSet<>();
 	}
 
 	public Configuration(String nom, PortConfigurationFourni portConfigurationFourni) {
 		this(nom, null, portConfigurationFourni);
 	}
 
-	private void ajoutComposant(Composant composant) {
+	public void ajoutComposant(Composant composant) {
 		composants.add(composant);
 	}
 
-	private void ajoutConnecteur(Connecteur connecteur) {
+	public void ajoutConnecteur(Connecteur connecteur) {
 		connecteurs.add(connecteur);
 	}
 
-	private void ajoutConfiguration(Configuration configuration) {
+	public void ajoutConfiguration(Configuration configuration) {
 		configurations.add(configuration);
 	}
 
@@ -46,6 +56,22 @@ public class Configuration extends ComposantSupreme {
 	public void ajoutPortConfigurationRequis(
 			PortConfigurationRequis portConfigurationRequis) {
 		this.portConfigurationRequis.add(portConfigurationRequis);
+	}
+	
+	public void ajoutBindingF(BindingF bf){
+		bindingF.add(bf);
+	}
+	
+	public void ajoutBindingR(BindingR br){
+		bindingR.add(br);
+	}
+	
+	public void ajoutAttachmentIN(AttachmentIN ai){
+		attachmentIN.add(ai);
+	}
+	
+	public void ajoutAttachmentOUT(AttachmentOUT ao){
+		attachmentOUT.add(ao);
 	}
 
 }

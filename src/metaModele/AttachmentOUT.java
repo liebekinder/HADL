@@ -9,8 +9,6 @@ public class AttachmentOUT {
 		super();
 		this.portRequis = portRequis;
 		this.roleSortie = roleSortie;
-		portRequis.ajoutAttachment(this);
-		roleSortie.ajoutAttachment(this);
 	}
 	
 	

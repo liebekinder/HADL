@@ -10,8 +10,6 @@ public class BindingF {
 		super();
 		this.portFourni = portFourni;
 		this.portConfigurationFourni = portConfigurationFourni;
-		portFourni.ajoutBinding(this);
-		portConfigurationFourni.ajoutBinding(this);
 	}
 	
 	
