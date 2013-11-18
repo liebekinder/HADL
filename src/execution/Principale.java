@@ -38,13 +38,15 @@ public class Principale {
 	 */
 	public static void main(String[] args) {
 
+		//TODO: on ne peut ajouter le pere aux fils tant que les fils ne sont pas crées...
+		//=> créer fils sans père et ajouter le père aux fils à l'initialisation
 		RequestClientServeurIN requestServeurIN = new RequestClientServeurIN(
 				"request serveur in");
 		RequestClientServeurOUT requestServeurOUT = new RequestClientServeurOUT(
 				"request serveur out");
 
 		ClientServeur clientServeur = new ClientServeur("client serveur",
-				requestServeurOUT);
+				requestServeurOUT,null);
 		clientServeur.ajoutPortConfigurationRequis(requestServeurIN);
 
 		// composant client avec ports principaux et ajout à la config
@@ -89,7 +91,7 @@ public class Principale {
 		setGlue.add(rpcOut);
 		setGlue.add(rpcIn);
 
-		RPC rpc = new RPC("rpc", setGlue);
+		RPC rpc = new RPC("rpc", setGlue,clientServeur);
 		clientServeur.ajoutConnecteur(rpc);
 
 		// attachment entre rpc et client

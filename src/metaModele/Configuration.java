@@ -16,8 +16,8 @@ public class Configuration extends ComposantSupreme {
 	private Set<AttachmentOUT> attachmentOUT;
 
 	public Configuration(String nom, PortConfigurationRequis portConfigurationRequis,
-			PortConfigurationFourni portConfigurationFourni) {
-		super(nom);
+			PortConfigurationFourni portConfigurationFourni,Configuration pere) {
+		super(nom, pere);
 		this.portConfigurationRequis = new HashSet<>();
 		ajoutPortConfigurationRequis(portConfigurationRequis);
 		this.portConfigurationFournis = new HashSet<>();
@@ -31,8 +31,8 @@ public class Configuration extends ComposantSupreme {
 		this.attachmentOUT = new HashSet<>();
 	}
 
-	public Configuration(String nom, PortConfigurationFourni portConfigurationFourni) {
-		this(nom, null, portConfigurationFourni);
+	public Configuration(String nom, PortConfigurationFourni portConfigurationFourni,Configuration pere) {
+		this(nom, null, portConfigurationFourni, pere);
 	}
 
 	public void ajoutComposant(Composant composant) {

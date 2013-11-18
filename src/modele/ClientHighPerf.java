@@ -8,13 +8,13 @@ import metaModele.PortRequis;
 public class ClientHighPerf extends Client{
 
 	public ClientHighPerf(String nom, Attribut attribut, PortRequis portRequis,
-			PortFourni portFournis, Configuration configuration) {
-		super(nom, attribut, portRequis, portFournis, configuration);
+			PortFourni portFournis, ClientServeur clientServeur) {
+		super(nom, attribut, portRequis, portFournis, clientServeur);
 	}
 
 	public ClientHighPerf(String nom, PortFourni portFournis,
-			Configuration configuration) {
-		super(nom, portFournis, configuration);
+			ClientServeur clientServeur) {
+		super(nom, portFournis, clientServeur);
 	}
 
 }

@@ -8,11 +8,10 @@ public class Composant extends ComposantSupreme {
 	private Set<Attribut> attributs;
 	private Set<PortRequis> portRequis;
 	private Set<PortFourni> portFournis;
-	private Configuration configuration;
 
 	public Composant(String nom, Attribut attribut, PortRequis portRequis,
-			PortFourni portFournis, Configuration configuration) {
-		super(nom);
+			PortFourni portFournis,Configuration pere) {
+		super(nom, pere);
 		this.attributs = new HashSet<Attribut>();
 		ajoutAttribut(attribut);
 		
@@ -22,14 +21,11 @@ public class Composant extends ComposantSupreme {
 		// portFournis[0] != null : "il doit y avoir au moins un PortFourni";
 		this.portFournis = new HashSet<PortFourni>();
 		ajoutPortFourni(portFournis);
-		
-		this.configuration = configuration;
-		configuration.ajoutComposant(this);
 	}
 
-	public Composant(String nom, PortFourni portFournis, Configuration configuration) {
+	public Composant(String nom, PortFourni portFournis,Configuration pere) {
 		// TODO check this
-		this(nom, null, null, portFournis, configuration);
+		this(nom, null, null, portFournis, pere);
 	}
 	
 	public void ajoutAttribut(Attribut attribut){
