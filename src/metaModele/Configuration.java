@@ -76,4 +76,15 @@ public class Configuration extends ComposantSupreme {
 		attachmentOUT.add(ao);
 	}
 
+	public void nouveauMessage(
+			PortConfigurationRequis portConfigurationRequis, String msg) {
+		for(BindingR br: bindingR){
+			if(br.getPortConfigurationRequis() == portConfigurationRequis){
+				br.getPortRequis().transmettreMessage(msg);
+			}
+		}
+	}
+	
+	
+
 }

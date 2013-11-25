@@ -1,6 +1,8 @@
 package metaModele;
 
-public class PortConfigurationRequis {
+import java.util.Observable;
+
+public class PortConfigurationRequis{
 
 	private String nom;
 	private Configuration configuration;
@@ -11,7 +13,7 @@ public class PortConfigurationRequis {
 	}
 	
 	public void transmettreMessage(String msg){
-//		configuration.transmettreMessage(msg);
+		configuration.nouveauMessage(this,msg);
 	}
 
 	public void definirPere(Configuration configuration) {

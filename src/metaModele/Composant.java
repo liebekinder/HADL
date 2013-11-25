@@ -42,4 +42,8 @@ public class Composant extends ComposantSupreme {
 		portFourni.definirPere(this);
 	}
 
+	public void nouveauMessage(PortRequis portRequis2, String msg) {
+				
+	}
+
 }

@@ -13,5 +13,10 @@ public class PortRequis {
 	public void definirPere(Composant composant) {
 		this.composant = composant;
 	}
+
+	public void transmettreMessage(String msg) {
+		composant.nouveauMessage(this,msg);
+		
+	}
 	
 }

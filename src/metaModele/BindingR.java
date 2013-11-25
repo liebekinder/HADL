@@ -11,6 +11,14 @@ public class BindingR {
 		this.portRequis = portRequis;
 		this.portConfigurationRequis = portConfigurationRequis;
 	}
+
+	public PortConfigurationRequis getPortConfigurationRequis() {
+		return portConfigurationRequis;
+	}
+
+	public PortRequis getPortRequis() {
+		return portRequis;
+	}	
 	
 	
 }
