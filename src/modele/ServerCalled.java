@@ -5,8 +5,8 @@ import metaModele.RoleSortie;
 
 public class ServerCalled extends RoleSortie{
 
-	public ServerCalled(String nom, Glue glue) {
-		super(nom, glue);
+	public ServerCalled(String nom) {
+		super(nom);
 	}
 
 }

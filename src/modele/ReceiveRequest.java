@@ -5,8 +5,8 @@ import metaModele.PortRequis;
 
 public class ReceiveRequest extends PortRequis{
 
-	public ReceiveRequest(String nom, Composant composant) {
-		super(nom, composant);
+	public ReceiveRequest(String nom) {
+		super(nom);
 	}
 
 }

@@ -34,10 +34,12 @@ public class Composant extends ComposantSupreme {
 	
 	public void ajoutPortRequis(PortRequis portRequis){
 		this.portRequis.add(portRequis);
+		portRequis.definirPere(this);
 	}
 
 	public void ajoutPortFourni(PortFourni portFourni){
 		this.portFournis.add(portFourni);
+		portFourni.definirPere(this);
 	}
 
 }

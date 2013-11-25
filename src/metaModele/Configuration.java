@@ -50,12 +50,14 @@ public class Configuration extends ComposantSupreme {
 	public void ajoutPortConfigurationFournis(
 			PortConfigurationFourni portConfigurationFourni) {
 		this.portConfigurationFournis.add(portConfigurationFourni);
+		portConfigurationFourni.definirPere(this);
 
 	}
 
 	public void ajoutPortConfigurationRequis(
 			PortConfigurationRequis portConfigurationRequis) {
 		this.portConfigurationRequis.add(portConfigurationRequis);
+		portConfigurationRequis.definirPere(this);
 	}
 	
 	public void ajoutBindingF(BindingF bf){

@@ -7,8 +7,8 @@ import metaModele.RoleSortie;
 
 public class RPCIn extends Glue{
 
-	public RPCIn(RoleSortie roleSortie, RoleEntree roleEntree, Connecteur connecteur) {
-		super(roleSortie, roleEntree, connecteur);
+	public RPCIn(RoleSortie roleSortie, RoleEntree roleEntree) {
+		super(roleSortie, roleEntree);
 	}
 
 }

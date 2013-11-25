@@ -5,8 +5,8 @@ import metaModele.PortFourni;
 
 public class SendRequest extends PortFourni {
 
-	public SendRequest(String nom, Composant composant) {
-		super(nom, composant);
+	public SendRequest(String nom) {
+		super(nom);
 	}
 
 }

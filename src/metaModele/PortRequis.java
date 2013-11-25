@@ -5,9 +5,12 @@ public class PortRequis {
 	private String nom;
 	private Composant composant;
 
-	public PortRequis(String nom, Composant composant) {
+	public PortRequis(String nom) {
 		super();
 		this.nom = nom;
+	}
+
+	public void definirPere(Composant composant) {
 		this.composant = composant;
 	}
 	

@@ -6,8 +6,8 @@ import metaModele.PortRequis;
 
 public class GetResponseConfiguration extends PortRequis{
 
-	public GetResponseConfiguration(String nom, Composant composant) {
-		super(nom, composant);
+	public GetResponseConfiguration(String nom) {
+		super(nom);
 	}
 
 	

@@ -5,12 +5,14 @@ public class RoleSortie {
 	private String nom;
 	private Glue glue;
 
-	public RoleSortie(String nom, Glue glue) {
+	public RoleSortie(String nom) {
 		super();
 		this.nom = nom;
-		this.glue = glue;
 	}
 
-	
-	
+	public void definirPere(Glue glue) {
+		this.glue = glue;
+
+	}
+
 }
