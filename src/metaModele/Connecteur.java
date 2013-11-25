@@ -9,7 +9,7 @@ public class Connecteur extends ComposantSupreme {
 
 	public Connecteur(String nom, Set<Glue> glues, Configuration pere) {
 		super(nom, pere);
-		glues = new HashSet<>();
+		this.glues = new HashSet<>();
 		ajoutGlue(glues);
 	}
 
@@ -23,5 +23,9 @@ public class Connecteur extends ComposantSupreme {
 		for(Glue g: glues){
 			ajoutGlue(g);
 		}
+	}
+
+	public Configuration getConfiguration() {
+		return composantPere;
 	}
 }

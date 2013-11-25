@@ -1,5 +1,7 @@
 package metaModele;
 
+import execution.Helper;
+
 public class AttachmentOUT {
 
 	private PortRequis portRequis;
@@ -9,6 +11,15 @@ public class AttachmentOUT {
 		super();
 		this.portRequis = portRequis;
 		this.roleSortie = roleSortie;
+	}
+
+	public RoleSortie getRoleSortie() {
+		return roleSortie;
+	}
+
+	public PortRequis getPortRequis() {
+		Helper.afficherMessage(this, "Attachment utilisé !");
+		return portRequis;
 	}
 	
 	

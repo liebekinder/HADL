@@ -1,6 +1,6 @@
 package metaModele;
 
-public class PortConfigurationFourni {
+public abstract class PortConfigurationFourni {
 
 	private String nom;
 	private Configuration configuration;
@@ -14,6 +14,8 @@ public class PortConfigurationFourni {
 		this.configuration = configuration;
 		
 	}
+
+	public abstract void transmettreMessage(String msg);
 	
 	
 }

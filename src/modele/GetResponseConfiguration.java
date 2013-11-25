@@ -1,6 +1,5 @@
 package modele;
 
-import metaModele.Composant;
 import metaModele.PortRequis;
 
 

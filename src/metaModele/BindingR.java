@@ -1,5 +1,7 @@
 package metaModele;
 
+import execution.Helper;
+
 public class BindingR {
 
 	private PortRequis portRequis;
@@ -17,6 +19,7 @@ public class BindingR {
 	}
 
 	public PortRequis getPortRequis() {
+		Helper.afficherMessage(this, "Binding utilisé !");
 		return portRequis;
 	}	
 	

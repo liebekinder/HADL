@@ -3,6 +3,8 @@ package metaModele;
 import java.util.HashSet;
 import java.util.Set;
 
+import execution.Helper;
+
 public class Configuration extends ComposantSupreme {
 
 	private Set<PortConfigurationRequis> portConfigurationRequis;
@@ -19,9 +21,9 @@ public class Configuration extends ComposantSupreme {
 			PortConfigurationFourni portConfigurationFourni,Configuration pere) {
 		super(nom, pere);
 		this.portConfigurationRequis = new HashSet<>();
-		ajoutPortConfigurationRequis(portConfigurationRequis);
+		if(portConfigurationRequis!=null) ajoutPortConfigurationRequis(portConfigurationRequis);
 		this.portConfigurationFournis = new HashSet<>();
-		ajoutPortConfigurationFournis(portConfigurationFourni);
+		if(portConfigurationFourni!=null) ajoutPortConfigurationFournis(portConfigurationFourni);
 		composants = new HashSet<Composant>();
 		
 
@@ -29,6 +31,7 @@ public class Configuration extends ComposantSupreme {
 		this.bindingR = new HashSet<>();
 		this.attachmentIN = new HashSet<>();
 		this.attachmentOUT = new HashSet<>();
+		this.connecteurs = new HashSet<>();
 	}
 
 	public Configuration(String nom, PortConfigurationFourni portConfigurationFourni,Configuration pere) {
@@ -78,9 +81,33 @@ public class Configuration extends ComposantSupreme {
 
 	public void nouveauMessage(
 			PortConfigurationRequis portConfigurationRequis, String msg) {
+		Helper.afficherMessage(this, msg);
 		for(BindingR br: bindingR){
 			if(br.getPortConfigurationRequis() == portConfigurationRequis){
 				br.getPortRequis().transmettreMessage(msg);
+			}
+		}
+	}
+
+	public void nouveauMessage(PortFourni portFourni, String msg) {
+		Helper.afficherMessage(this, msg);
+		for(BindingF bf: bindingF){
+			if(bf.getPortFourni() == portFourni){
+				bf.getPortConfigurationFourni().transmettreMessage(msg);
+			}
+		}
+		for(AttachmentIN ai: attachmentIN){
+			if(ai.getPortFourni() == portFourni){
+				ai.getRoleEntree().transmettreMessage(msg);
+			}
+		}
+	}
+
+	public void nouveauMessage(RoleSortie roleSortie, String msg) {
+		Helper.afficherMessage(this, msg);
+		for(AttachmentOUT ao: attachmentOUT){
+			if(ao.getRoleSortie() == roleSortie){
+				ao.getPortRequis().transmettreMessage(msg);
 			}
 		}
 	}

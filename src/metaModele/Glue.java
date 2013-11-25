@@ -1,5 +1,7 @@
 package metaModele;
 
+import execution.Helper;
+
 public class Glue {
 
 	private RoleSortie roleSortie;
@@ -16,6 +18,15 @@ public class Glue {
 
 	public void definirPere(Connecteur connecteur) {
 		this.connecteur = connecteur;
+	}
+
+	public void nouveauMessage(String msg) {
+		Helper.afficherMessage(this, msg);
+		roleSortie.transmettreMessage(msg);
+	}
+
+	public Configuration getConfiguration() {
+		return connecteur.getConfiguration();
 	}
 	
 	
