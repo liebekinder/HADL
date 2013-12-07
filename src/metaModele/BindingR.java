@@ -19,7 +19,6 @@ public class BindingR {
 	}
 
 	public PortRequis getPortRequis() {
-		Helper.afficherMessage(this, "Binding utilisé !");
 		return portRequis;
 	}	
 	

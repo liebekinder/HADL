@@ -1,13 +1,11 @@
 package metaModele;
 
-import java.util.Observable;
-
 import execution.Helper;
 
 public class PortConfigurationRequis{
 
-	private String nom;
-	private Configuration configuration;
+	protected String nom;
+	protected Configuration configuration;
 
 	public PortConfigurationRequis(String nom) {
 		super();

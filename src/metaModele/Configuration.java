@@ -7,15 +7,15 @@ import execution.Helper;
 
 public class Configuration extends ComposantSupreme {
 
-	private Set<PortConfigurationRequis> portConfigurationRequis;
-	private Set<PortConfigurationFourni> portConfigurationFournis;
-	private Set<Composant> composants;
-	private Set<Connecteur> connecteurs;
-	private Set<Configuration> configurations;
-	private Set<BindingF> bindingF;
-	private Set<BindingR> bindingR;
-	private Set<AttachmentIN> attachmentIN;
-	private Set<AttachmentOUT> attachmentOUT;
+	protected Set<PortConfigurationRequis> portConfigurationRequis;
+	protected Set<PortConfigurationFourni> portConfigurationFournis;
+	protected Set<Composant> composants;
+	protected Set<Connecteur> connecteurs;
+	protected Set<Configuration> configurations;
+	protected Set<BindingF> bindingF;
+	protected Set<BindingR> bindingR;
+	protected Set<AttachmentIN> attachmentIN;
+	protected Set<AttachmentOUT> attachmentOUT;
 
 	public Configuration(String nom, PortConfigurationRequis portConfigurationRequis,
 			PortConfigurationFourni portConfigurationFourni,Configuration pere) {
@@ -32,6 +32,7 @@ public class Configuration extends ComposantSupreme {
 		this.attachmentIN = new HashSet<>();
 		this.attachmentOUT = new HashSet<>();
 		this.connecteurs = new HashSet<>();
+		this.configurations  = new HashSet<>();
 	}
 
 	public Configuration(String nom, PortConfigurationFourni portConfigurationFourni,Configuration pere) {
@@ -78,12 +79,38 @@ public class Configuration extends ComposantSupreme {
 	public void ajoutAttachmentOUT(AttachmentOUT ao){
 		attachmentOUT.add(ao);
 	}
+	
+//	//bindig reverses
+//	
+//	public void nouveauMessage(
+//			PortRequis portRequis, String msg) {
+//		Helper.afficherMessage(this, msg);
+//		for(BindingR br: bindingR){
+//			if(br.getPortRequis() == portRequis){
+//				Helper.afficherMessage(this, "Binding utilisé !");
+//				br.getPortConfigurationRequis().transmettreMessage(msg);
+//			}
+//		}
+//	}
+//	
+//	public void nouveauMessage(
+//			PortConfigurationFourni portConfigurationFourni, String msg) {
+//		Helper.afficherMessage(this, msg);
+//		for(BindingF bf: bindingF){
+//			if(bf.getPortConfigurationFourni() == portConfigurationFourni){
+//				Helper.afficherMessage(this, "Binding utilisé !");
+//				bf.getPortFourni().transmettreMessage(msg);
+//			}
+//		}
+//	}
+//	//fin
 
 	public void nouveauMessage(
 			PortConfigurationRequis portConfigurationRequis, String msg) {
 		Helper.afficherMessage(this, msg);
 		for(BindingR br: bindingR){
 			if(br.getPortConfigurationRequis() == portConfigurationRequis){
+				Helper.afficherMessage(this, "Binding utilisé !");
 				br.getPortRequis().transmettreMessage(msg);
 			}
 		}
@@ -93,6 +120,7 @@ public class Configuration extends ComposantSupreme {
 		Helper.afficherMessage(this, msg);
 		for(BindingF bf: bindingF){
 			if(bf.getPortFourni() == portFourni){
+				Helper.afficherMessage(this, "Binding utilisé !");
 				bf.getPortConfigurationFourni().transmettreMessage(msg);
 			}
 		}

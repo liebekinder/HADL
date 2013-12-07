@@ -2,8 +2,8 @@ package metaModele;
 
 public abstract class PortConfigurationFourni {
 
-	private String nom;
-	private Configuration configuration;
+	protected String nom;
+	protected Configuration configuration;
 
 	public PortConfigurationFourni(String nom) {
 		super();

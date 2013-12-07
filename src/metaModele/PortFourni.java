@@ -5,7 +5,7 @@ import execution.Helper;
 public class PortFourni {
 
 	private String nom;
-	private Composant composant;
+	protected Composant composant;
 
 	public PortFourni(String nom) {
 		super();

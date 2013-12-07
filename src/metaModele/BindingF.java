@@ -15,7 +15,6 @@ public class BindingF {
 	}
 
 	public PortConfigurationFourni getPortConfigurationFourni() {
-		Helper.afficherMessage(this, "Binding utilisé !");
 		return portConfigurationFourni;
 	}
 
