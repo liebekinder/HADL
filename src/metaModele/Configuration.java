@@ -80,30 +80,6 @@ public class Configuration extends ComposantSupreme {
 		attachmentOUT.add(ao);
 	}
 	
-//	//bindig reverses
-//	
-//	public void nouveauMessage(
-//			PortRequis portRequis, String msg) {
-//		Helper.afficherMessage(this, msg);
-//		for(BindingR br: bindingR){
-//			if(br.getPortRequis() == portRequis){
-//				Helper.afficherMessage(this, "Binding utilisé !");
-//				br.getPortConfigurationRequis().transmettreMessage(msg);
-//			}
-//		}
-//	}
-//	
-//	public void nouveauMessage(
-//			PortConfigurationFourni portConfigurationFourni, String msg) {
-//		Helper.afficherMessage(this, msg);
-//		for(BindingF bf: bindingF){
-//			if(bf.getPortConfigurationFourni() == portConfigurationFourni){
-//				Helper.afficherMessage(this, "Binding utilisé !");
-//				bf.getPortFourni().transmettreMessage(msg);
-//			}
-//		}
-//	}
-//	//fin
 
 	public void nouveauMessage(
 			PortConfigurationRequis portConfigurationRequis, String msg) {

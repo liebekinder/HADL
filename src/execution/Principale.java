@@ -89,7 +89,7 @@ public class Principale {
 
 		
 		//message : user&password&request
-		
+		//request : troll
 		
 		
 		
@@ -290,6 +290,9 @@ public class Principale {
 		clientServeur.ajoutAttachmentOUT(receiveRequestFromServerCalled);
 		
 		lancerExecution(clientServeur, requestServeurIN, "Ornicare&azerty&troll");
+//		lancerExecution(clientServeur, requestServeurIN, "erreur&azerty&troll");
+//		lancerExecution(clientServeur, requestServeurIN, "Ornicare&erreur&troll");
+//		lancerExecution(clientServeur, requestServeurIN, "Ornicare&azerty&invalid");
 
 	}
 

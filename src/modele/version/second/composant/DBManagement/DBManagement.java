@@ -12,9 +12,12 @@ public class DBManagement extends Composant{
 	}
 
 	@Override
-	public void nouveauMessage(PortRequis portRequis, String msg) {
-		// TODO Auto-generated method stub
-		
+	public void nouveauMessage(PortRequis portRequis, String request) {
+		if(portRequis instanceof GetDBRequest) {
+			String rmsg = "Invalid request.";
+			if(request.equals("troll")) rmsg  = "toi même";
+			for(PortFourni pF : portFournis) if(pF instanceof SendDBResponse) pF.transmettreMessage(rmsg);
+		}
 	}
 
 }

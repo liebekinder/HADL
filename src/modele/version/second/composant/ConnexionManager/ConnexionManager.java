@@ -20,13 +20,17 @@ public class ConnexionManager extends Composant {
 		
 		if(portRequis instanceof GetAutorization) {
 			String[] smsg = msg.split("&");
-			String authorization = smsg[smsg.length];
+			String authorization = smsg[smsg.length-1];
 			if(!authorization.equals("true")) {
-				for(PortFourni pF : portFournis) if(pF instanceof RequestOut) pF.transmettreMessage(msg);
+				for(PortFourni pF : portFournis) if(pF instanceof RequestOut) pF.transmettreMessage("Invalid user.");
 			}
 			else {
 				for(PortFourni pF : portFournis) if(pF instanceof SendDBRequest) pF.transmettreMessage(smsg[2]);
 			}
+		}
+		
+		if(portRequis instanceof ReceiveDBResponse) {
+			for(PortFourni pF : portFournis) if(pF instanceof RequestOut) pF.transmettreMessage(msg);
 		}
 	}
 

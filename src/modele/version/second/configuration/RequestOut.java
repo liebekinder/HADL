@@ -10,8 +10,7 @@ public class RequestOut extends PortConfigurationFourni{
 
 	@Override
 	public void transmettreMessage(String msg) {
-		// TODO Auto-generated method stub
-		
+		((Serveur)this.configuration).nouveauMessage(this, msg);
 	}
 
 }

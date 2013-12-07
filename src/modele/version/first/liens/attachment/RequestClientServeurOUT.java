@@ -14,7 +14,7 @@ public class RequestClientServeurOUT extends PortConfigurationFourni{
 	public void transmettreMessage(String msg) {
 		Helper.afficherMessage(this, msg);
 		//TODO sortie
-		System.out.println(msg);
+		System.out.println("Vous avez un nouveau message : "+msg);
 	}
 
 }

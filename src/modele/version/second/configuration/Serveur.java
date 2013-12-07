@@ -11,12 +11,20 @@ public class Serveur extends Configuration{
 		super(nom, portConfigurationFourni, pere);
 	}
 
+	//étrange
 	public void nouveauMessage(GetTransferedMessage getTransferedMessage,
 			String msg) {
 		for(PortConfigurationRequis pR : portConfigurationRequis) {
 			if(pR instanceof RequestIn) this.nouveauMessage(pR, msg);
 		}
 			
+	}
+
+	//étrange bis
+	public void nouveauMessage(RequestOut requestOut, String msg) {
+		for(PortConfigurationRequis pR : portConfigurationRequis) {
+			if(pR instanceof SendTransfertMessage) this.composantPere.nouveauMessage(pR, msg);
+		}
 	}
 
 }
