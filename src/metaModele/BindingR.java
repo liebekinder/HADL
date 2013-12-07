@@ -1,6 +1,5 @@
 package metaModele;
 
-import execution.Helper;
 
 public class BindingR {
 

@@ -1,6 +1,5 @@
 package metaModele;
 
-import execution.Helper;
 
 public class PortConfigurationRequis{
 
@@ -13,7 +12,7 @@ public class PortConfigurationRequis{
 	}
 	
 	public void transmettreMessage(String msg){
-		Helper.afficherMessage(this, msg);
+		configuration.afficherMessage(this, msg);
 		configuration.nouveauMessage(this,msg);
 	}
 

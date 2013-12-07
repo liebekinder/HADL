@@ -1,6 +1,5 @@
 package metaModele;
 
-import execution.Helper;
 
 public class AttachmentOUT {
 
@@ -18,7 +17,7 @@ public class AttachmentOUT {
 	}
 
 	public PortRequis getPortRequis() {
-		Helper.afficherMessage(this, "Attachment utilisé !");
+		portRequis.composant.getConfiguration().afficherMessage(this, "Attachment utilisé !");
 		return portRequis;
 	}
 	

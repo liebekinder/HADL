@@ -1,6 +1,5 @@
 package metaModele;
 
-import execution.Helper;
 
 public class AttachmentIN {
 
@@ -18,7 +17,7 @@ public class AttachmentIN {
 	}
 	
 	public RoleEntree getRoleEntree() {
-		Helper.afficherMessage(this, "Attachment utilisé !");
+		portFourni.composant.getConfiguration().afficherMessage(this, "Attachment utilisé !");
 		return roleEntree;
 	}
 	

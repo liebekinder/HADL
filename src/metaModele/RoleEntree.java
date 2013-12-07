@@ -1,6 +1,5 @@
 package metaModele;
 
-import execution.Helper;
 
 public class RoleEntree {
 
@@ -20,7 +19,7 @@ public class RoleEntree {
 
 
 	public void transmettreMessage(String msg) {
-		Helper.afficherMessage(this, msg);
+		glue.getConfiguration().afficherMessage(this, msg);
 		glue.nouveauMessage(msg);
 	}
 	

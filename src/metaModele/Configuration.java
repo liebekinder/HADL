@@ -3,9 +3,7 @@ package metaModele;
 import java.util.HashSet;
 import java.util.Set;
 
-import execution.Helper;
-
-public class Configuration extends ComposantSupreme {
+public abstract class Configuration extends ComposantSupreme {
 
 	protected Set<PortConfigurationRequis> portConfigurationRequis;
 	protected Set<PortConfigurationFourni> portConfigurationFournis;
@@ -80,23 +78,25 @@ public class Configuration extends ComposantSupreme {
 		attachmentOUT.add(ao);
 	}
 	
+	public abstract void afficherMessage(Object clazzObject, String msg);
+	
 
 	public void nouveauMessage(
 			PortConfigurationRequis portConfigurationRequis, String msg) {
-		Helper.afficherMessage(this, msg);
+		this.afficherMessage(this, msg);
 		for(BindingR br: bindingR){
 			if(br.getPortConfigurationRequis() == portConfigurationRequis){
-				Helper.afficherMessage(this, "Binding utilisé !");
+				this.afficherMessage(this, "Binding utilisé !");
 				br.getPortRequis().transmettreMessage(msg);
 			}
 		}
 	}
 
 	public void nouveauMessage(PortFourni portFourni, String msg) {
-		Helper.afficherMessage(this, msg);
+		this.afficherMessage(this, msg);
 		for(BindingF bf: bindingF){
 			if(bf.getPortFourni() == portFourni){
-				Helper.afficherMessage(this, "Binding utilisé !");
+				this.afficherMessage(this, "Binding utilisé !");
 				bf.getPortConfigurationFourni().transmettreMessage(msg);
 			}
 		}
@@ -108,7 +108,7 @@ public class Configuration extends ComposantSupreme {
 	}
 
 	public void nouveauMessage(RoleSortie roleSortie, String msg) {
-		Helper.afficherMessage(this, msg);
+		this.afficherMessage(this, msg);
 		for(AttachmentOUT ao: attachmentOUT){
 			if(ao.getRoleSortie() == roleSortie){
 				ao.getPortRequis().transmettreMessage(msg);

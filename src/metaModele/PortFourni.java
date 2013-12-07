@@ -1,6 +1,5 @@
 package metaModele;
 
-import execution.Helper;
 
 public class PortFourni {
 
@@ -17,7 +16,7 @@ public class PortFourni {
 	}
 
 	public void transmettreMessage(String msg) {
-		Helper.afficherMessage(this, msg);
+		composant.getConfiguration().afficherMessage(this, msg);
 		composant.getConfiguration().nouveauMessage(this, msg);
 	}
 	

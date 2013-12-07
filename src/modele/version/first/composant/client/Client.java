@@ -1,6 +1,5 @@
 package modele.version.first.composant.client;
 
-import execution.Helper;
 import metaModele.Attribut;
 import metaModele.Composant;
 import metaModele.PortFourni;
@@ -22,7 +21,7 @@ public class Client extends Composant {
 
 	@Override
 	public void nouveauMessage(PortRequis portRequis, String msg) {
-		Helper.afficherMessage(this, msg);
+		composantPere.afficherMessage(this, msg);
 		// TODO Auto-generated method stub
 		if(portRequis instanceof GetResponseConfiguration) {
 			for(PortFourni pR : portFournis) if(pR instanceof SendRequest) pR.transmettreMessage(msg);

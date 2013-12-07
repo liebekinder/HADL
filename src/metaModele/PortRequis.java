@@ -1,11 +1,10 @@
 package metaModele;
 
-import execution.Helper;
 
 public class PortRequis {
 
 	private String nom;
-	private Composant composant;
+	Composant composant;
 
 	public PortRequis(String nom) {
 		super();
@@ -17,7 +16,7 @@ public class PortRequis {
 	}
 
 	public void transmettreMessage(String msg) {
-		Helper.afficherMessage(this, msg);
+		composant.getConfiguration().afficherMessage(this, msg);
 		composant.nouveauMessage(this,msg);
 		
 	}

@@ -5,7 +5,6 @@ import metaModele.Composant;
 import metaModele.PortFourni;
 import metaModele.PortRequis;
 import modele.version.first.configuration.ClientServeur;
-import execution.Helper;
 
 public class Serveur extends Composant{
 
@@ -21,7 +20,7 @@ public class Serveur extends Composant{
 
 	@Override
 	public void nouveauMessage(PortRequis portRequis, String msg) {
-		Helper.afficherMessage(this, msg);
+		composantPere.afficherMessage(this, msg);
 
 		if(portRequis instanceof ReceiveRequest) {
 			for(PortFourni pF : this.portFournis) {
@@ -35,5 +34,4 @@ public class Serveur extends Composant{
 			}
 		}
 	}
-
 }
